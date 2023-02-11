@@ -1,0 +1,14 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .loginForm{
+        justify-content: flex-start;
+    }
+}
