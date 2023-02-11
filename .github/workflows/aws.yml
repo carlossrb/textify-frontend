@@ -14,7 +14,7 @@ env:
   ECS_SERVICE: textify-container-service # set this to your Amazon ECS service name
   ECS_CLUSTER: textify-cluster # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION:
-    first-run-task-definition # set this to the path to your Amazon ECS task definition
+    first-run-task-definition:1 # set this to the path to your Amazon ECS task definition
     # file, e.g. .aws/task-definition.json
   CONTAINER_NAME:
     textify-container # set this to the name of the container in the
