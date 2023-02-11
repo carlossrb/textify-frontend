@@ -4,9 +4,9 @@ name: Deploy to Amazon ECS
 # events but only for the master branch
 on:
   push:
-    branches: [ docker ]
+    branches: [ main ]
   pull_request:
-    branches: [ docker ]
+    branches: [ main ]
 
 env:
   AWS_REGION: MY_AWS_REGION                   # set this to your preferred AWS region, e.g. us-west-1
