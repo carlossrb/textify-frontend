@@ -4,7 +4,7 @@ import { SmileOutlined, FrownOutlined } from '@ant-design/icons';
 import { primaryTheme } from 'theme/primaryTheme';
 import ptBR from 'antd/locale/pt_BR';
 import dayjs from 'dayjs';
-import Login from 'pages/login/login';
+import Login from 'pages/login';
 import 'theme/stylesheet.css';
 
 const { Footer } = Layout;
@@ -27,7 +27,7 @@ function App() {
         <Login />
         <Footer style={{ textAlign: 'center' }}>
           <Space direction='vertical'>
-            <span>Textify ©{new Date().getFullYear()}</span>
+            <span>Textify ©{new Date().getFullYear()} - Infotek</span>
             <Switch
               size='small'
               onChange={handleClick}
