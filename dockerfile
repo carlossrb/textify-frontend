@@ -1,24 +1,15 @@
-FROM node:14-alpine AS builder
-ENV NODE_ENV production
-# Add a work directory
+# build environment
+FROM node:stable-alpine as build
 WORKDIR /app
-# Cache and Install dependencies
-COPY package.json .
-COPY yarn.lock .
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json ./
+COPY yarn.lock ./
 RUN yarn install --production
-# Copy app files
-COPY . .
-# Build the app
+RUN yarn add react-scripts@3.4.1 -g --silent
+COPY . ./
 RUN yarn build
-
-# Bundle static assets with nginx
-FROM nginx:1.21.0-alpine as production
-ENV NODE_ENV production
-# Copy built assets from builder
-COPY --from=builder /app/build /usr/share/nginx/html
-# Add your nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-# Expose port
+# production environment
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
