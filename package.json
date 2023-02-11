@@ -35,7 +35,7 @@
     "workbox-streams": "^6.5.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "rm -rf node_modules/.cache/gh-pages && npm run build",
     "deploy": "gh-pages publish -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
