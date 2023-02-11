@@ -5,7 +5,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --production
-RUN yarn add react-scripts@3.4.1 -g --silent
+RUN yarn add react-scripts@5.0.1 -g --silent
 COPY . ./
 RUN yarn build
 # production environment
