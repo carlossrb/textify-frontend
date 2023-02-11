@@ -1,10 +1,15 @@
 .topInvisibleBar {
   position: relative;
-  background-color: red;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  padding: 0.25rem 0rem;
+  padding: 0.5rem 0rem;
+  padding-right: 0.5rem;
 }
 
+html, body, #root, #container {
+  height: 100vh;
+  margin: 0;
+}
