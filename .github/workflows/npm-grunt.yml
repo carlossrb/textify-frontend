@@ -1,28 +1,29 @@
-name: React frontend
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+parameters:
+  name: ''
+  testScript: ''
+  configurations:
+    LinuxNode12: { vmImage: 'ubuntu-latest', nodeVersion: 14.x }
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  - job: ${{ parameters.name }}
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-
+        ${{ insert }}: ${{ parameters.configurations }}
+    pool:
+      vmImage: $(vmImage)
     steps:
-    - uses: actions/checkout@v3
+      - script: |
+          git config --global core.autocrlf false
+          git config --global user.name "Create React App"
+          git config --global user.email "cra@email.com"
+        displayName: 'Initialize Git config'
+      - checkout: self
+        path: create-react-app
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - task: NodeTool@0
+        inputs:
+          versionSpec: $(nodeVersion)
+        displayName: 'Install Node.js'
 
-    - name: Build
-      run: |
-        npm run build
-        grunt
+      - script: yarn --frozen-lockfile
+        displayName: 'Run yarn'
