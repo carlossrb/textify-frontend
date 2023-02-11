@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/textify-frontend/static/css/main.e22f389d.css",
+    "main.js": "/textify-frontend/static/js/main.538d6f22.js",
+    "static/js/787.1ce2754e.chunk.js": "/textify-frontend/static/js/787.1ce2754e.chunk.js",
+    "service-worker.js": "/textify-frontend/service-worker.js",
+    "index.html": "/textify-frontend/index.html",
+    "main.e22f389d.css.map": "/textify-frontend/static/css/main.e22f389d.css.map",
+    "main.538d6f22.js.map": "/textify-frontend/static/js/main.538d6f22.js.map",
+    "787.1ce2754e.chunk.js.map": "/textify-frontend/static/js/787.1ce2754e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e22f389d.css",
+    "static/js/main.538d6f22.js"
+  ]
+}
