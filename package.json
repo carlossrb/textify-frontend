@@ -2,6 +2,7 @@
   "name": "Textify-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://carlossrb.github.io/textify-frontend",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -13,6 +14,7 @@
     "@types/react-router-dom": "^5.3.3",
     "antd": "^5.2.0",
     "dayjs": "^1.11.7",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
@@ -33,6 +35,8 @@
     "workbox-streams": "^6.5.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
