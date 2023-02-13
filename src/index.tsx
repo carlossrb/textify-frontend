@@ -4,14 +4,14 @@ import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
-import { CartProvider } from 'hooks/useAuth';
+import { AuthProvider } from 'hooks/useAuth';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <CartProvider>
+    <AuthProvider>
       <App />
-    </CartProvider>
+    </AuthProvider>
   </React.StrictMode>,
 );
 

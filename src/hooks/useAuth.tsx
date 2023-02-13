@@ -34,7 +34,7 @@ export const useAuth = (): AuthContextValue => {
 };
 const AuthContext = createContext<AuthContextValue>({} as never);
 
-export const CartProvider: React.FC<Props> = ({ children }) => {
+export const AuthProvider: React.FC<Props> = ({ children }) => {
   const [auth, setAuth] = useState<Omit<AuthContextValue, 'methods'>>(initState);
   const methods: UserContextMethods = {
     login() {
@@ -61,7 +61,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     const storagedUser = localStorage.getItem('@App:user');
-    if (storagedUser) {
+    if (storagedUser !== null) {
       setAuth(JSON.parse(storagedUser));
     }
   }, []);

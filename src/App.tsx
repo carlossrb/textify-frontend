@@ -12,9 +12,13 @@ const { darkAlgorithm, defaultAlgorithm } = theme;
 dayjs.locale('pt_BR');
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const themeStorage = localStorage.getItem('@dark');
+  const [isDarkMode, setIsDarkMode] = useState(
+    themeStorage ? (JSON.parse(themeStorage) as boolean) : true,
+  );
 
   const handleClick = () => {
+    localStorage.setItem('@dark', String(!isDarkMode));
     setIsDarkMode((previousValue) => !previousValue);
   };
 
@@ -33,7 +37,7 @@ function App() {
               onChange={handleClick}
               checkedChildren={<SmileOutlined />}
               unCheckedChildren={<FrownOutlined />}
-              defaultChecked
+              checked={isDarkMode}
             />
           </Space>
         </Footer>

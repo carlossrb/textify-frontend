@@ -6,7 +6,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 const maptRoutes = [
   { page: Welcome, auth: true, path: '/home' },
-  { page: NotFoundPage, auth: true, path: '*' },
+  { page: NotFoundPage, auth: false, path: '*' },
   { page: Login, auth: false, path: '/login' },
 ];
 
