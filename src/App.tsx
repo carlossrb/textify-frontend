@@ -4,8 +4,8 @@ import { SmileOutlined, FrownOutlined } from '@ant-design/icons';
 import { primaryTheme } from 'theme/primaryTheme';
 import ptBR from 'antd/locale/pt_BR';
 import dayjs from 'dayjs';
-import Login from 'pages/login';
 import 'theme/stylesheet.css';
+import Routes from 'router';
 
 const { Footer } = Layout;
 const { darkAlgorithm, defaultAlgorithm } = theme;
@@ -24,7 +24,7 @@ function App() {
       locale={ptBR}
     >
       <Layout id='container'>
-        <Login />
+        <Routes />
         <Footer style={{ textAlign: 'center' }}>
           <Space direction='vertical'>
             <span>Textify ©{new Date().getFullYear()} - Infotek</span>
