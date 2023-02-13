@@ -19,6 +19,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    environment: deploy-s3
     steps:
       - run: echo "Deploy do serviço no S3"
       - uses: actions/checkout@v1
