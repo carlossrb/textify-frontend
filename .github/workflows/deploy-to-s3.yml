@@ -1,4 +1,6 @@
 name: Deploy project
+env:
+  CI: false
 on:
   push:
     branches:
