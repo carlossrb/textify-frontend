@@ -7,7 +7,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 const maptRoutes = [
   { page: Welcome, auth: true, path: '/home' },
   { page: NotFoundPage, auth: false, path: '*' },
-  { page: Login, auth: false, path: '/' },
 ];
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode; auth: boolean }> = ({
@@ -22,9 +21,9 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Login />} />
         {maptRoutes.map(({ page: Page, auth, path }, i) => {
-          const condition =
-            (signed && auth) || (signed && !auth) || (!signed && !auth) || path === '/';
+          const condition = (signed && auth) || (signed && !auth) || (!signed && !auth);
           return (
             <Route
               path={path}
