@@ -6,6 +6,7 @@ import ptBR from 'antd/locale/pt_BR';
 import dayjs from 'dayjs';
 import 'theme/stylesheet.css';
 import Routes from 'router';
+import TopBar from 'components/topbar';
 
 const { Footer } = Layout;
 const { darkAlgorithm, defaultAlgorithm } = theme;
@@ -28,6 +29,7 @@ function App() {
       locale={ptBR}
     >
       <Layout id='container'>
+        <TopBar />
         <Routes />
         <Footer style={{ textAlign: 'center' }}>
           <Space direction='vertical'>
